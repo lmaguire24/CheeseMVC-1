@@ -1,4 +1,5 @@
-﻿using CheeseMVC.Models;
+﻿using System;
+using CheeseMVC.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CheeseMVC.Data
@@ -6,10 +7,12 @@ namespace CheeseMVC.Data
     public class CheeseDbContext : DbContext
     {
         public DbSet<Cheese> Cheeses { get; set; }
+        public DbSet<CheeseCategory> Categories { get; set; }
 
         public CheeseDbContext(DbContextOptions<CheeseDbContext> options) 
             : base(options)
         { }
+
 
     }
 }
